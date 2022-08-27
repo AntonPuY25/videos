@@ -10,7 +10,7 @@ const express = require('express');
 const app = express();
 app.use((0, cors_1.default)());
 app.use((0, body_parser_1.default)());
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
