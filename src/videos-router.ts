@@ -31,7 +31,7 @@ videoRoute.post('/', titleCorrectValidatorMiddleWare, titleMaxLengthValidator, (
     const title = req.body.title;
     const newVideo = videosRepositories.createVideo(title)
 
-    res.send(newVideo).status(201)
+    res.status(201).send(newVideo)
 
 })
 

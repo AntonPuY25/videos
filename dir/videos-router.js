@@ -26,7 +26,7 @@ exports.videoRoute.get('/:id', (req, res) => {
 exports.videoRoute.post('/', middleWares_1.titleCorrectValidatorMiddleWare, middleWares_1.titleMaxLengthValidator, (req, res) => {
     const title = req.body.title;
     const newVideo = videos_repositories_1.videosRepositories.createVideo(title);
-    res.send(newVideo).status(201);
+    res.status(201).send(newVideo);
 });
 exports.videoRoute.put('/:id', middleWares_1.titleCorrectValidatorMiddleWare, middleWares_1.titleMaxLengthValidator, (req, res) => {
     const videoId = Number(req.params.id);
